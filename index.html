@@ -296,6 +296,138 @@
     .tagline-line:last-child { color: var(--blue); opacity: 1; font-weight: 600; font-size: clamp(2rem, 5.5vw, 4rem); }
     .tagline-banner:hover .tagline-line { opacity: 1; }
 
+    /* ── QUOTE ───────────────────────────────────────── */
+    .quote-section {
+      background: var(--dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 100px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 80% at 50% 50%, rgba(91,164,212,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .quote-mark {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 10rem;
+      line-height: 0.6;
+      color: var(--blue);
+      opacity: 0.15;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+    .quote-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.3rem, 3.5vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.6;
+      max-width: 820px;
+      margin: 0 auto 32px;
+      letter-spacing: 0.03em;
+    }
+    .quote-attr {
+      position: relative;
+      z-index: 1;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    /* ── FEATURED ────────────────────────────────────── */
+    .featured { background: var(--mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .featured-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+      text-align: left;
+    }
+    .feature-card:hover { border-color: rgba(91,164,212,0.5); transform: translateY(-5px); }
+
+    .feature-poster {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: brightness(0.88);
+      transition: filter 0.4s, transform 0.4s;
+    }
+    .feature-card:hover .feature-poster { filter: brightness(1); transform: scale(1.03); }
+
+    .feature-poster-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .feature-poster-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(to top, var(--card), transparent);
+      pointer-events: none;
+    }
+
+    .feature-type {
+      font-size: 0.62rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .feature-body { padding: 28px 28px 32px; }
+    .feature-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .feature-impact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(91,164,212,0.08);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      margin-bottom: 16px;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .feature-desc {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: var(--text);
+      font-weight: 300;
+    }
+
     /* ── EVENT INFO ───────────────────────────────────── */
     .event-info { background: var(--dark); }
     .event-info-inner { max-width: 1100px; margin: 0 auto; }
@@ -586,6 +718,45 @@
     </div>
   </div>
 
+  <!-- ── FEATURED ── -->
+  <section class="featured">
+    <div class="featured-inner">
+      <span class="section-label reveal">Case Studies</span>
+      <h2 class="section-title reveal">What We'll Be<br>Talking About</h2>
+      <div class="featured-grid">
+
+        <div class="feature-card reveal">
+          <div class="feature-poster-wrap">
+            <img class="feature-poster" src="assets/13-reasons-why-poster.jpg" alt="13 Reasons Why poster" />
+          </div>
+          <div class="feature-body">
+            <span class="feature-type">TV Series &middot; Drama</span>
+            <h3 class="feature-title">13 Reasons Why</h3>
+            <div class="feature-impact">⚠ Youth Suicide Rates</div>
+            <p class="feature-desc">
+              Netflix's controversial series depicting teenage suicide in graphic detail sparked a documented rise in youth suicide rates following its release. We examine how irresponsible storytelling can turn fiction into a real-world public health crisis.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-card reveal">
+          <div class="feature-poster-wrap">
+            <img class="feature-poster" src="assets/Jaws-movie-poster.jpg" alt="Jaws movie poster" />
+          </div>
+          <div class="feature-body">
+            <span class="feature-type">Film &middot; Thriller</span>
+            <h3 class="feature-title">Jaws</h3>
+            <div class="feature-impact">⚠ Tourism &amp; Marine Fear</div>
+            <p class="feature-desc">
+              Spielberg's 1975 blockbuster single-handedly reshaped public perception of the ocean. Beach tourism plummeted, shark hunting surged, and an irrational fear of open water persisted for decades — all from two hours of cinema.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── EVENT INFO ── -->
   <section class="event-info" id="event">
     <div class="event-info-inner">
@@ -665,13 +836,14 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-    <p class="footer-motto">
-      <span>Watch.</span> &nbsp;Think. &nbsp;<span>Understand.</span> &nbsp;Grow.
-    </p>
-    <p class="footer-copy">The Power of Media on Our Minds &mdash; 10 May 2026 &bull; Hall 921 A</p>
+<p class="footer-copy">The Power of Media on Our Minds &mdash; 10 May 2026 &bull; Hall 921 A</p>
   </footer>
 
   <script>
+    // Force page to top on every load
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
     // ── Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
