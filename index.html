@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Power of Media on Our Minds</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+  <script>history.scrollRestoration = 'manual';</script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -855,9 +856,9 @@
   </footer>
 
   <script>
-    // Force page to top on every load
-    history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
+    document.addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
+    window.addEventListener('load', () => window.scrollTo(0, 0));
 
     // ── Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
